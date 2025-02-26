@@ -18,4 +18,16 @@ interface Characteristic {
   manufacturer: string;
 }
 
-export type { Product, Characteristic };
+interface Filters {
+  country: string[];
+  brand: string[];
+  dosage: string[];
+  releaseForm: string[];
+  storageTemperature: string[];
+  quantityPerPackage: number[];
+  expirationDate: string[];
+  isByPrescription: boolean[];
+  manufacturer: string[];
+}
+
+export type { Product, Characteristic, Filters };
