@@ -13,7 +13,7 @@ const SortButton = () => {
     setIsOpen(false);
   }
   return (
-    <div className="space-y-2 text-black justiy-self-end self-end min-w-[150px]">
+    <div className="space-y-2 z-10 text-black justiy-self-end self-end min-w-[150px]">
       <button
         className="bg-gray-200 text-xs flex items-center rounded-md px-2 py-2.5 gap-1 w-full"
         type="button"

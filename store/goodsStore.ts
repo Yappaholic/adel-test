@@ -4,6 +4,7 @@ import type { TSort } from "@/types/sort";
 interface IGoodsStore {
   goods: Array<IProduct>;
   sorting: TSort;
+  pagesAmount: number;
   updateSorting: (sortingType: TSort) => void;
   fetch: (url: string) => void;
 }
@@ -11,10 +12,13 @@ interface IGoodsStore {
 const useStore = create<IGoodsStore>((set) => ({
   goods: [],
   sorting: "По релевантности",
+  pagesAmount: 0,
   updateSorting: (sortingType: TSort) => set({ sorting: sortingType }),
   fetch: async (url: string) => {
     const response = await fetch(url);
-    set({ goods: await response.json() });
+    const goods = await response.json();
+    const pages = Math.ceil(goods.length / 12);
+    set({ goods: goods, pagesAmount: pages });
   },
 }));
 
