@@ -1,12 +1,12 @@
-interface Product {
+interface IProduct {
   id: number;
   title: string;
   price: number;
   image: string;
-  characteristics: Characteristic;
+  characteristics: ICharacteristic;
 }
 
-interface Characteristic {
+interface ICharacteristic {
   country: string;
   brand: string;
   dosage: string;
@@ -18,7 +18,7 @@ interface Characteristic {
   manufacturer: string;
 }
 
-interface Filters {
+interface IFilters {
   country: string[];
   brand: string[];
   dosage: string[];
@@ -30,4 +30,4 @@ interface Filters {
   manufacturer: string[];
 }
 
-export type { Product, Characteristic, Filters };
+export type { IProduct, ICharacteristic, IFilters };
