@@ -13,8 +13,14 @@ function createButtons(pagesAmount: number, page: number) {
     buttons.push(
       <Link
         className={clsx(
-          page === pageNumber + 1 && "bg-blue-500",
-          "hover:bg-gray-200 bg-black text-white px-3 py-2 text-xs rounded-full",
+          page === pageNumber + 1 && "bg-blue-500 text-white hover:bg-blue-500",
+          "hover:bg-gray-200",
+          "text-black",
+          "font-bold",
+          "px-3",
+          " py-2",
+          " text-xs",
+          "rounded-full",
         )}
         href={link}
         key={pageNumber}
@@ -25,28 +31,39 @@ function createButtons(pagesAmount: number, page: number) {
   }
   return buttons;
 }
+const NextPageButton = ({ page }: { page: number }) => {
+  const pagesAmount: number = useStore(
+    useShallow((state) => state.pagesAmount),
+  );
+  if (page === pagesAmount)
+    return (
+      <button
+        disabled
+        role="link"
+        className="bg-gray-600 rounded-full size-8 flex items-center justify-center"
+        type="button"
+      >
+        <ChevronRight size={12} />
+      </button>
+    );
+  if (page !== pagesAmount)
+    return (
+      <Link
+        href={`/?page=${page + 1}`}
+        className="bg-gray-600 rounded-full size-8 flex items-center justify-center"
+      >
+        <ChevronRight size={12} />
+      </Link>
+    );
+};
 const PageNavigation = () => {
   const [, page] = usePageIndex();
-  console.log(page);
   const pagesAmount = useStore(useShallow((state) => state.pagesAmount));
   const linkButtons = createButtons(pagesAmount, page);
   return (
     <div className="flex gap-1 jusify-self-center justify-center items-center self-center pl-60">
       {linkButtons}
-      <button
-        disabled={page === pagesAmount}
-        className="bg-gray-600 rounded-full p-3"
-        key="next"
-      >
-        {page === pagesAmount ? (
-          <ChevronRight size={12} />
-        ) : (
-          <Link href={`/?page=${page + 1}`}>
-            <ChevronRight size={12} />
-          </Link>
-        )}
-      </button>
-      ,
+      <NextPageButton page={page} />
     </div>
   );
 };
