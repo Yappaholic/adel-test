@@ -12,7 +12,7 @@ function minMaxPrice(goods: TProduct[]): number[] {
   const max = Math.max(...prices);
   return [min, max];
 }
-// Добавляет фильтр в список
+// Удаляет фильтр из списка
 function removeFilter(name: string, filters: Array<string>): Array<string> {
   const index = filters.indexOf(name);
   if (index > -1) {
@@ -20,7 +20,7 @@ function removeFilter(name: string, filters: Array<string>): Array<string> {
   }
   return Array.from(filters);
 }
-// Удаляет фильтр из списка
+// Добавляет фильтр в список
 function addFilter(name: string, filters: Array<string>): Array<string> {
   filters.push(name);
   return Array.from(filters);
