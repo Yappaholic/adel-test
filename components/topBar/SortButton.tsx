@@ -1,3 +1,4 @@
+"use client";
 import useStore from "@/store/goodsStore";
 import { TSort } from "@/types/sort";
 import { clsx } from "clsx/lite";
@@ -26,21 +27,24 @@ const SortButton = () => {
         />
       </button>
       {isOpen ? (
-        <div className="absolute flex flex-col">
+        <div className="absolute flex flex-col rounded-md shadow-md p-2 bg-white">
           <button
-            className="bg-white hover:bg-gray-400 p-1"
+            className="bg-white hover:bg-gray-300 p-1 rounded-md"
+            type="button"
             onClick={() => handleUpdate("По релевантности")}
           >
             По релевантности
           </button>
           <button
-            className="bg-white hover:bg-gray-400"
+            className="bg-white hover:bg-gray-300 p-1 rounded-md"
+            type="button"
             onClick={() => handleUpdate("Сначала дешевые")}
           >
             Сначала дешевые
           </button>
           <button
-            className="bg-white hover:bg-gray-400"
+            className="bg-white hover:bg-gray-300 p-1 rounded-md"
+            type="button"
             onClick={() => handleUpdate("Сначала дорогие")}
           >
             Сначала дорогие

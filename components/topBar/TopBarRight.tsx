@@ -1,4 +1,3 @@
-"use client";
 import SortButton from "./SortButton";
 import LayoutButton from "./LayoutButton";
 

@@ -7,7 +7,7 @@ const Container: React.FC<React.PropsWithChildren<Props>> = ({
   children,
 }) => {
   return (
-    <div className={clsx("mx-auto max-w-[1420]", className)}>{children}</div>
+    <div className={clsx("mx-auto max-w-[1420px]", className)}>{children}</div>
   );
 };
 

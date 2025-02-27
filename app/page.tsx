@@ -1,24 +1,14 @@
-"use client";
 import Container from "@/components/Container";
-import TopBarRight from "@/components/TopBarRight";
-import TopBarLeft from "@/components/TopBarLeft";
-import FilterPanel from "@/components/FilterPanel";
-import Goods from "@/components/Goods";
+import FilterPanel from "@/components/filterPanel/FilterPanel";
+import Goods from "@/components/goods/Goods";
 import PageNavigation from "@/components/PageNavigation";
+import TopBar from "@/components/topBar/TopBar";
 
-const TopBar = () => {
-  return (
-    <div className="flex justify-between gap-2 mb-4">
-      <TopBarLeft />
-      <TopBarRight />
-    </div>
-  );
-};
 const Home = () => {
   return (
     <Container className="py-2">
       <TopBar />
-      <div className="grid grid-cols-[1fr,5fr]">
+      <div className="flex items-start justify-between mb-4">
         <FilterPanel />
         <Goods />
       </div>

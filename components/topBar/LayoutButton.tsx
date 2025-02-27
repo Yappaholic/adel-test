@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { LayoutGrid, Rows3 } from "lucide-react";
 import clsx from "clsx/lite";
@@ -7,6 +8,7 @@ const LayoutButton = () => {
   return (
     <div className="bg-white rounded-md flex items-center justify-center h-9 w-[4.5rem]">
       <button
+        type="button"
         onClick={() => setIsGrid(true)}
         className={clsx(
           isGrid === true && "bg-blue-600",
@@ -25,6 +27,7 @@ const LayoutButton = () => {
       </button>
       <button
         onClick={() => setIsGrid(false)}
+        type="button"
         className={clsx(
           isGrid === false && "bg-blue-600",
           "rounded-md",

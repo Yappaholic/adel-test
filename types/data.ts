@@ -1,12 +1,12 @@
-interface IProduct {
+type TProduct = {
   id: number;
   title: string;
   price: number;
   image: string;
-  characteristics: ICharacteristic;
-}
+  characteristics: TCharacteristic;
+};
 
-interface ICharacteristic {
+type TCharacteristic = {
   country: string;
   brand: string;
   dosage: string;
@@ -16,18 +16,18 @@ interface ICharacteristic {
   expirationDate: string;
   isByPrescription: boolean;
   manufacturer: string;
-}
+};
 
 interface IFilters {
-  country: string[];
-  brand: string[];
-  dosage: string[];
-  releaseForm: string[];
-  storageTemperature: string[];
-  quantityPerPackage: number[];
-  expirationDate: string[];
-  isByPrescription: boolean[];
-  manufacturer: string[];
+  country?: string[];
+  brand?: string[];
+  dosage?: string[];
+  releaseForm?: string[];
+  storageTemperature?: string[];
+  quantityPerPackage?: number[];
+  expirationDate?: string[];
+  isByPrescription?: boolean[];
+  manufacturer?: string[];
 }
 
-export type { IProduct, ICharacteristic, IFilters };
+export type { TProduct, TCharacteristic, IFilters };

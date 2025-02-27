@@ -1,6 +1,6 @@
-import { IProduct } from "@/types/data";
+import { TProduct } from "@/types/data";
 
-export const data: Array<IProduct> = [
+export const data: Array<TProduct> = [
   {
     id: 1,
     title:
